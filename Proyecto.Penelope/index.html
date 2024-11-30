@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Indumentaria</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Penelope</a>
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="./hogar.html">Indumentaria</a></li>
+                <li><a href="./amig.html">Amigurumis</a></li>
+                <li><a href="./envios.html">Envíos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de bienvenida -->
+    <section class="welcome">
+        <h1>Bienvenidos a nuestra tienda de Crochet</h1>
+        <p class="titulo">~Cada hilo tiene una historia que contar~</p>
+    </section>
+    <hr>
+    <div class="image-container">
+        <img src="./Img/vestidoblanco3.jpeg" alt="Imagen 1" class="image-slide">
+        <img src="./Img/capucha1.jpeg" alt="Imagen 2" class="image-slide">
+        <img src="./Img/camisablanca1.jpeg" alt="Imagen 3" class="image-slide">
+    </div>
+
+    <!-- Sección Nueva Colección -->
+    <section class="new-collection">
+        <h2>Coleccion Navideña</h2>
+        <p>Celebra la magia de la Navidad con nuestra exclusiva colección navideña. Cada pieza está diseñada con cariño y dedicación, perfecta para darle un toque único y cálido a tus celebraciones. Desde adornos tejidos a mano hasta accesorios festivos, nuestra colección trae la alegría de la temporada a tu hogar y tu estilo.</p>
+        <div class="collection-items">
+            <div class="item">
+                <img src="./Img/navidad.jpeg" alt="Imagen de amigurumi navideño">
+                <p>Amigurumi de Santa</p>
+            </div>
+            <div class="item">
+                <img src="./Img/duende1.jpeg" alt="Nuevo Producto 2">
+                <p>Tobby</p>
+            </div>
+            <div class="item">
+                <img src="./Img/duende2.jpeg" alt="Nuevo Producto 3">
+                <p>Jasper y Quinn</p>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    <!-- Sección Quiénes Somos -->
+    <section class="about-us">
+        <h2>Quiénes Somos</h2>
+        <p class="nosotras">En Penelope, la pasion por el crochet se entrelaza con la historia y la creatividad. Somos Miriam y Carola, madre e hija de la localidad de Firmat,
+            dedicadas a crear indumentaria unica y llena de amor. Nuestro nombre inspirado en la mitologia de Penelope, quien tejia y destejia con paciencia
+            y sabiduria, cada una de nuestras piezas cuenta una historia y esta hecha a mano con esmero.
+            En nuestra coleccion encontraras desde sueteres y bufandas hasta accesorios que resaltan la calidez del crochet y la elegancia atemporal.
+            Creemos en la belleza de lo artesanal y en la importancia de cada puntaa, que refleja el cariño y dedicacion que ponemos en cada creacion.
+            Te invitamos a explorar nuestro mundo de hilos y colores donde cada prenda es un abrazo tejido.
+        </p>
+    </section>
+ <script>
+    
+    // Obtenemos el elemento de la hamburguesa y la lista de enlaces
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.navbar .nav-links');
+
+    // Añadir evento al hacer clic en el ícono de la hamburguesa
+    hamburger.addEventListener('click', () => {
+        // Alternamos la clase 'active' en los enlaces
+        navLinks.classList.toggle('active');
+        // Alternamos la clase 'active' en la hamburguesa para cambiar su estado (opcional)
+        hamburger.classList.toggle('active');
+    });
+
+ </script>
+</body>
+<footer>
+    <p>&copy; 2024 Indumentaria a Crochet | <a href="/privacidad">Todos los derechos reservados</a> | <a href="/contacto">Localidad:Firmat/Santa Fe</a></p>
+</footer>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Indumentaria</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Penelope</a>
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#">Indumentaria</a></li>
+                <li><a href="#Amigurumis">Amigurumis</a></li>
+                <li><a href="./envios.html">Envíos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Indumentaria</h2>
+        <section class="productos">
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/camisablanca1.jpeg" alt="Imagen de camisa blanca" class="imagen imagen-activa">
+                    <img src="./Img/camisablanca2.jpeg" alt="Imagen 2 camisa blanca" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Camisa Zeus</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$70000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="camisa" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Camisa Zeus', 70000, 'talle')">Agregar al carrito</button>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/polleranegra1.jpeg" alt="Imagen de pollera negra" class="imagen imagen-activa">
+                    <img src="./Img/polleranegra3.jpeg" alt="Imagen 2 pollera negra" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Pollera Luna</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$65000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="pollera" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Pollera Luna', 65000)">Agregar al carrito</button>
+                  </div>
+            </div>
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/preventa0.jpeg" alt="Imagen de camisa a cuadros" class="imagen imagen-activa">
+                    <img src="./Img/preventahombre.jpeg" alt="Imagen 2 camisa a cuadros" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Camisa Perseo</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$75000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="talle" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Camisa perseo', 75000)">Agregar al carrito</button>
+
+                </div>
+            </div>
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/top1.jpeg" alt="Imagen de top de flores" class="imagen imagen-activa">
+                    <img src="./Img/top2.jpeg" alt="Imagen 2 top de flores" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Top Primavera</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$30000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="talle" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Top primavera', 30000)">Agregar al carrito</button>
+
+                </div>
+            </div>
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/cardigan.jpeg" alt="Imagen de cardigan multicolor" class="imagen imagen-activa">
+                    <img src="./Img/img1.jpeg" alt="Imagen 2 cardigan multicolor" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Cardigan Harry Style</h2>
+                    <p class="descripcion-texto">Edision Limitada</p>
+                    <p class="precio">$85000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="talle" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Cardigan harry', 85000)">Agregar al carrito</button>
+
+                </div>
+            </div>
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/chalecolove.jpeg" alt="Imagen de chaleco con stampa Love" class="imagen imagen-activa">
+                    <img src="./Img/chalecolove2.jpeg" alt="Imagen 2 chaleco con stampa Love" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Chaleco Eros</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$30000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="talle" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Chaleco eros', 30000)">Agregar al carrito</button>
+
+                </div>
+            </div>
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/chalecoguada.negro.jpeg" alt="Imagen de chaleco calado" class="imagen imagen-activa">
+                    <img src="./Img/afrodita.jpeg" alt="Imagen 2 chaleco calado " class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Chaleco Afrodita</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$32000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="talle" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Chaleco afrodita', 32000)">Agregar al carrito</button>
+
+                </div>
+            </div>
+            <div class="producto">
+                <div class="galeria">
+                    <img src="./Img/capucha1.jpeg" alt="Imagen de balaclava" class="imagen imagen-activa">
+                    <img src="./Img/capucha3.jpeg" alt="Imagen 2 balaclava" class="imagen">
+                    <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+                    <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+                </div>
+                <div class="descripcion">
+                    <h2 class="nombre">Balaclava</h2>
+                    <p class="descripcion-texto">Disponible en varios colores.</p>
+                    <p class="precio">$27000</p>
+                    <div class="seleccionar-talle">
+                        <label for="talle">Talle:</label>
+                        <select id="talle" name="talle">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="agregar-carrito" onclick="agregarAlCarrito('Balaclava', 27000)">Agregar al carrito</button>
+
+                </div>
+            </div>
+
+       <div class="producto">
+        <div class="galeria">
+            <img src="./Img/cuellitoblanco.jpeg" alt="Imagen de cuellito" class="imagen imagen-activa">
+            <img src="./Img/cuellitonegro.jpeg" alt="Imagen 2 cuellito" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Cuello Largo Ares</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$25000</p>
+            <div class="seleccionar-talle">
+                <label for="talle">Talle:</label>
+                <select id="talle" name="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Cuello ares', 25000)">Agregar al carrito</button>
+
+        </div>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/chaleconegroybordo.jpeg" alt="Imagen de chaleco" class="imagen imagen-activa">
+            <img src="./Img/hermes2.jpeg" alt="Imagen 2 chaleco" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Chaleco Hermes</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$35000</p>
+            <div class="seleccionar-talle">
+                <label for="talle">Talle:</label>
+                <select id="talle" name="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Chaleco hermes', 35000)">Agregar al carrito</button>
+
+        </div>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/vestidoblanco2.jpeg" alt="Imagen de vestido blanco de playa" class="imagen imagen-activa">
+            <img src="./Img/vestidoblanco3.jpeg" alt="Imagen 2 vestido blanco de playa" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Vestido Amber</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$40000</p>
+            <div class="seleccionar-talle">
+                <label for="talle">Talle:</label>
+                <select id="talle" name="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Vestido amber', 40000)">Agregar al carrito</button>
+
+        </div>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/sueterazul.viki.jpeg" alt="Imagen de sueter azul " class="imagen imagen-activa">
+            <img src="./Img/sueterazul.viki2.jpeg" alt="Imagen 2 sueter azul" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Sueter Aqua</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$35000</p>
+            <div class="seleccionar-talle">
+                <label for="talle">Talle:</label>
+                <select id="talle" name="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Sueter aqua', 35000)">Agregar al carrito</button>
+
+        </div>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/toptiritas1.jpeg" alt="Imagen de top con tiritas " class="imagen imagen-activa">
+            <img src="./Img/toptiritas2.jpeg" alt="Imagen 2 top con tiritas" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Top Mina</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$20000</p>
+            <div class="seleccionar-talle">
+                <label for="talle">Talle:</label>
+                <select id="talle" name="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Top mina', 20000)">Agregar al carrito</button>
+
+        </div>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/img3.jpeg" alt="Imagen de sueter azul " class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Sueter Hela</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$35000</p>
+            <div class="seleccionar-talle">
+                <label for="talle">Talle:</label>
+                <select id="talle" name="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Sueter hela', 35000)">Agregar al carrito</button>
+
+        </div>
+    </div>
+   </section>
+   <h2>Accesorios y Hogar</h2>
+   <section class="productos">
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/posavaso.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+            <img src="./Img/posavasoww.jpeg" alt="Imagen 2 posa vaso" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Posa vasos</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">x6 $4000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Posa vaso', 4000)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/portacosmetico.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+            <img src="./Img/portacosmetico2.jpeg" alt="Porta cosmético con flores (imagen 2)" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Porta Cosmeticos</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$8000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Portacosmetico', 8000)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/platodesitio1.jpeg" alt="Plato de sitio" class="imagen imagen-activa">
+            <img src="./Img/plato_marca.jpeg" alt="Plato de sitio imagen 2" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Plato de Sitio</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$17000 c/u - 2x $30000 - 4x $50000</p>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Plato de Sitio', 17000)">Agregar al carrito</button>
+        </div>
+    </div>
+    
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/cuadraditos.jpeg" alt="Posa vaso cuadrado" class="imagen imagen-activa">
+            <img src="./Img/florcitas.jpeg" alt="Posa vaso con florcitas" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Posa vasos</h2>
+            <p class="descripcion-texto">Disponible en 2 estilos.</p>
+            <p class="precio">6x $4000</p>
+            <div class="seleccionar-opcion">
+                <label for="opciones-posa-vasos">Opciones:</label>
+                <select id="opciones-posa-vasos" name="tipo">
+                    <option value="florcita">Florcita</option>
+                    <option value="margarita">Margarita</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Posa vasos', 4000, 'opciones-posa-vasos')">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/alfombra1.jpeg" alt="Alfombra Atenea" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Alfombra Atenea</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$40000</p>
+            
+        </div>
+        <button class="agregar-carrito">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/alfombra2.jpeg" alt="Pie de cama con tiritas" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Pie de cama</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$70000</p>
+            <div class="seleccionar-color">
+                <label for="color">Color:</label>
+                <select id="color" name="color">
+                    <option value="blanco y gris">Blanco y Gris</option>
+                    <option value="blanco y negro">Blanco y Negro</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Pie de cama', 60000)">Agregar al carrito</button>
+        </div>
+    </div>
+    </section>
+
+
+    <section id="Amigurumis">
+    <h2>Amigurumis</h2>
+    <section class="productos">
+     <div class="producto">
+         <div class="galeria">
+             <img src="./Img/dumbldore.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+         </div>
+         <div class="descripcion">
+             <h2 class="nombre">Albus Dumbledore</h2>
+             <p class="descripcion-texto">Adorable Santa Claus hecho a mano en crochet, perfecto para decorar tu hogar en las fiestas. Con su traje rojo, barba blanca y sonrisa amigable, este amigurumi captura el espíritu navideño de forma encantadora.</p>
+             <p class="precio">$15000</p>
+         </div>
+         <button class="agregar-carrito" onclick="agregarAlCarrito('Albus Dumbledore', 15000)">Agregar al carrito</button>
+     </div>
+ 
+     <div class="producto">
+         <div class="galeria">
+             <img src="./Img/hermione-ron.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+         </div>
+         <div class="descripcion">
+             <h2 class="nombre">Hermione y Ron</h2>
+             <p class="descripcion-texto">Encantadores amigurumis de Hermione y Ron, con sus trajes de Hogwarts</p>
+             <p class="precio">$25000</p>
+         </div>
+         <button class="agregar-carrito" onclick="agregarAlCarrito('Hermione y Ron', 25000)">Agregar al carrito</button>
+     </div>
+     <div class="producto">
+        <div class="galeria">
+            <img src="./Img/snape.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Severus Snape</h2>
+            <p class="descripcion-texto">El enigmático maestro de Pociones de Hogwarts, tejido a mano con detalles minuciosos.</p>
+            <p class="precio">$15000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Severus Snape', 15000)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/voldemort.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Lord Voldemort</h2>
+            <p class="descripcion-texto">Con su pálida piel, nariz en forma de serpiente y mirada aterradora, este amigurumi refleja la esencia del villano más oscuro del mundo mágico.</p>
+            <p class="precio">$15000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Lord Voldemort', 15000)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/3-harry.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Combo de Hogwarts</h2>
+            <p class="descripcion-texto">Combo de amigurumis de Harry Potter, Ron Weasley y Hermione Granger, los inseparables amigos de Hogwarts.</p>
+            <p class="precio">$40000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Combo', 40000)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/harriPotter.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Harry Potter</h2>
+            <p class="descripcion-texto">Amigurumi de Harry Potter, el joven mago que conquistó el corazón de millones.</p>
+            <p class="precio">$15000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Harry Potter', 15000)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/santa1.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Santa Claus</h2>
+            <p class="descripcion-texto">Amigurumi de Santa, para que lleves el espiritu navideño en cada rincon de la casa.</p>
+            <p class="precio">$30000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Santa Claus', 30000)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/duende1.jpeg" alt="Porta cosmético con flores" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Duende Tobby</h2>
+            <p class="descripcion-texto">¡Ideal para decorar o regalar durante la temporada navideña!"</p>
+            <p class="precio">$35000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Duende Tobby', 35000)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/velanavideña.jpeg" alt="imagen de vela navideña" class="imagen imagen-activa">
+            <img src="./Img/velanavideña1.jpeg" alt="imagen2 de vela navideña" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Vela Navideña</h2>
+            <p class="descripcion-texto"> Ideales para iluminar tu hogar con el espíritu de la Navidad</p>
+            <p class="precio">$10000 o 2x $17000</p>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Vela navideña', 10000)">Agregar al carrito</button>
+        </div>
+    
+</section>
+</section>
+<h2>Infantil</h2>
+<section class="productos">
+ <div class="producto">
+     <div class="galeria">
+         <img src="./Img/escarpines.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+     </div>
+     <div class="descripcion">
+         <h2 class="nombre">Escarpines Constan</h2>
+         <p class="precio">$15000</p>
+     </div>
+     <button class="agregar-carrito" onclick="agregarAlCarrito('Escarpines Constan', 15000)">Agregar al carrito</button>
+ </div>
+ <div class="producto">
+    <div class="galeria">
+        <img src="./Img/sonajero.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+    </div>
+    <div class="descripcion">
+        <h2 class="nombre">Sonajero</h2>
+        <p class="precio">$12000</p>
+    </div>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Sonajero', 12000)">Agregar al carrito</button>
+</div>
+<div class="producto">
+    <div class="galeria">
+        <img src="./Img/portachupeteclaro.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+    </div>
+    <div class="descripcion">
+        <h2 class="nombre">Porta Chupetes Claro</h2>
+        <p class="precio">$15000</p>
+    </div>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Porta chupetes', 15000)">Agregar al carrito</button>
+</div>
+<div class="producto">
+    <div class="galeria">
+        <img src="./Img/escarpin2.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+    </div>
+    <div class="descripcion">
+        <h2 class="nombre">Escarpines Blue</h2>
+        <p class="precio">$15000</p>
+    </div>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Escarpines Blue', 15000)">Agregar al carrito</button>
+</div>
+<div class="producto">
+    <div class="galeria">
+        <img src="./Img/portachupete (2).jpeg" alt="Posa vaso" class="imagen imagen-activa">
+    </div>
+    <div class="descripcion">
+        <h2 class="nombre">Portachupete Anna</h2>
+        <p class="precio">$15000</p>
+    </div>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Portachupete Anna', 15000)">Agregar al carrito</button>
+</div>
+<div class="producto">
+    <div class="galeria">
+        <img src="./Img/portachupetemarron.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+    </div>
+    <div class="descripcion">
+        <h2 class="nombre">Portachupete Lilo</h2>
+        <p class="precio">$15000</p>
+    </div>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Portachupete', 15000)">Agregar al carrito</button>
+</div>
+<div class="producto">
+    <div class="galeria">
+        <img src="./Img/sonajero.jpeg" alt="Posa vaso" class="imagen imagen-activa">
+    </div>
+    <div class="descripcion">
+        <h2 class="nombre">Sonajero</h2>
+        <p class="precio">$15000</p>
+    </div>
+    <label for="opciones-sonajero">Elige un diseño:</label>
+    <select id="opciones-sonajero" name="sonajero">
+        <option value="bunny">Bunny</option>
+        <option value="sheep">Sheep</option>
+        <option value="oso">Oso</option>
+    </select>
+    <button class="agregar-carrito" onclick="agregarAlCarrito('Sonajero', 15000)">Agregar al carrito</button>
+</div>
+</div>
+    </section> 
+    <div class="cart-container">
+        <h3>Tu Carrito</h3>
+        <div id="cart-items">
+            <!-- Los items del carrito se agregarán aquí -->
+        </div>
+        <p id="total">Total: $0.00</p>
+        <button id="checkout-btn">Ir a Pagar</button>
+        <button id="reset-btn">Resetear Carrito</button> <!-- Botón para resetear el carrito -->
+
+    </div>
+    
+    </main>
+    <script>
+         // Obtenemos el elemento de la hamburguesa y la lista de enlaces
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.navbar .nav-links');
+
+    // Añadir evento al hacer clic en el ícono de la hamburguesa
+    hamburger.addEventListener('click', () => {
+        // Alternamos la clase 'active' en los enlaces
+        navLinks.classList.toggle('active');
+        // Alternamos la clase 'active' en la hamburguesa para cambiar su estado (opcional)
+        hamburger.classList.toggle('active');
+    });
+
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+    // Guardar el carrito completo en localStorage
+    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Cambié "carrito" por "cart"
+
+    // Verificar si el carrito no está vacío
+    if (carrito.length > 0) {
+        // Guardar el carrito en localStorage para usarlo en envios.html
+        localStorage.setItem('cart', JSON.stringify(carrito)); // Cambié "carrito" por "cart"
+
+        // Redirigir a la página de envíos
+        window.location.href = 'envios.html';
+    } else {
+        alert('Tu carrito está vacío. Agrega productos para proceder al pago.');
+    }
+});
+
+// Función para agregar productos al carrito
+function agregarAlCarrito(nombre, precio) {
+    // Verificar si el producto tiene opciones adicionales (como color o talle)
+    let opciones = null;
+    const selectElement = event.target.closest('.producto').querySelector('select'); // Seleccionar el <select> en el producto
+    
+    if (selectElement) {
+        opciones = selectElement.value; // Obtener el valor seleccionado (talle o color)
+    }
+
+    // Crear un objeto para el producto a agregar al carrito
+    const producto = {
+        nombre: nombre,
+        precio: precio,
+        opciones: opciones
+    };
+
+    // Obtener el carrito actual desde localStorage o inicializarlo si no existe
+    let carrito = JSON.parse(localStorage.getItem('cart')) || []; // Cambié "carrito" por "cart"
+
+    // Agregar el producto al carrito
+    carrito.push(producto);
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('cart', JSON.stringify(carrito)); // Cambié "carrito" por "cart"
+
+    // Actualizar la vista del carrito
+    actualizarCarrito();
+}
+
+// Función para actualizar la vista del carrito
+function actualizarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Cambié "carrito" por "cart"
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalElement = document.getElementById('total');
+    
+    // Limpiar el contenedor antes de actualizar
+    cartItemsContainer.innerHTML = '';
+
+    // Calcular el total
+    let total = 0;
+
+    // Mostrar los productos del carrito
+    carrito.forEach((producto, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+        
+        itemDiv.innerHTML = `
+            <p>${producto.nombre}</p>
+            <p>Precio: $${producto.precio}</p>
+            ${producto.opciones ? `<p>Opción: ${producto.opciones}</p>` : ''}
+            <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+        cartItemsContainer.appendChild(itemDiv);
+
+        total += producto.precio;
+    });
+
+    // Actualizar el total en el carrito
+    totalElement.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+// Función para eliminar un producto del carrito
+function eliminarDelCarrito(index) {
+    let carrito = JSON.parse(localStorage.getItem('cart')) || []; // Cambié "carrito" por "cart"
+    carrito.splice(index, 1); // Eliminar el producto por índice
+    localStorage.setItem('cart', JSON.stringify(carrito)); // Guardar el carrito actualizado
+    actualizarCarrito(); // Actualizar la vista del carrito
+}
+
+// Función para resetear el carrito
+document.getElementById('reset-btn').addEventListener('click', () => {
+    localStorage.removeItem('cart');
+    actualizarCarrito();
+});
+
+// Llamar a la función para actualizar el carrito al cargar la página
+document.addEventListener('DOMContentLoaded', actualizarCarrito);
+
+        </script>
+</body>        
+
+<footer>
+    <p>&copy; 2024 Indumentaria a Crochet | <a href="/privacidad">Todos los derechos reservados</a> | <a href="/contacto">Localidad:Firmat/Santa Fe</a></p>
+</footer>
+
+</html>

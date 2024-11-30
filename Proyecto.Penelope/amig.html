@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Indumentaria</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Penelope</a>
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#">Indumentaria</a></li>
+                <li><a href="./amig.html">Amigurumis</a></li>
+                <li><a href="./envios.html">Envíos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/cuadraditos.jpeg" alt="Posa vaso cuadrado" class="imagen imagen-activa">
+            <img src="./Img/florcitas.jpeg" alt="Posa vaso con florcitas" class="imagen">
+            <div class="flecha flecha-izquierda" onclick="changeImage(this.parentNode, -1)">&#10094;</div>
+            <div class="flecha flecha-derecha" onclick="changeImage(this.parentNode, 1)">&#10095;</div>
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Posa vasos</h2>
+            <p class="descripcion-texto">Disponible en 2 estilos.</p>
+            <p class="precio">6x $4000</p>
+            <div class="seleccionar-opcion">
+                <label for="opciones-posa-vasos">Opciones:</label>
+                <select id="opciones-posa-vasos" name="tipo">
+                    <option value="florcita">Florcita</option>
+                    <option value="margarita">Margarita</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Posa vasos', 4000, 'opciones-posa-vasos')">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/alfombra1.jpeg" alt="Alfombra Atenea" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Alfombra Atenea</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$40000</p>
+        </div>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Alfombra Atenea', 40000)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <div class="galeria">
+            <img src="./Img/alfombra2.jpeg" alt="Pie de cama con tiritas" class="imagen imagen-activa">
+        </div>
+        <div class="descripcion">
+            <h2 class="nombre">Pie de cama</h2>
+            <p class="descripcion-texto">Disponible en varios colores.</p>
+            <p class="precio">$70000</p>
+            <div class="seleccionar-color">
+                <label for="color">Color:</label>
+                <select id="color" name="color">
+                    <option value="blanco y gris">Blanco y Gris</option>
+                    <option value="blanco y negro">Blanco y Negro</option>
+                </select>
+            </div>
+            <button class="agregar-carrito" onclick="agregarAlCarrito('Pie de cama', 60000, 'color')">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <div class="cart-container">
+        <h3>Tu Carrito</h3>
+        <div id="cart-items">
+            <!-- Los items del carrito se agregarán aquí -->
+        </div>
+        <p id="total">Total: $0.00</p>
+        <button id="checkout-btn">Ir a Pagar</button>
+        <button id="reset-btn">Resetear Carrito</button> <!-- Botón para resetear el carrito -->
+    </div>
+
+    <script>
+    // Función para resetear el carrito
+    document.getElementById('reset-btn').addEventListener('click', function() {
+        // Limpiar el carrito en localStorage
+        localStorage.removeItem('cart');
+        // Actualizar la vista del carrito a vacío
+        actualizarCarrito();
+    });
+
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(nombreProducto, precio, opcionId) {
+        // Obtener el color/talle u opción seleccionada
+        const opcionSeleccionada = document.getElementById(opcionId) ? document.getElementById(opcionId).value : null;
+
+        // Crear objeto del producto con nombre, precio y opción seleccionada
+        const producto = {
+            nombre: nombreProducto,
+            precio: precio,
+            opcion: opcionSeleccionada || 'No seleccionado'  // Si no hay opción seleccionada, mostrar 'No seleccionado'
+        };
+
+        // Obtener carrito desde localStorage o inicializarlo como vacío
+        let carrito = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Agregar el nuevo producto al carrito
+        carrito.push(producto);
+
+        // Guardar el carrito actualizado en localStorage
+        localStorage.setItem('cart', JSON.stringify(carrito));
+
+        // Actualizar la vista del carrito
+        actualizarCarrito();
+    }
+
+    // Función para actualizar la vista del carrito
+    function actualizarCarrito() {
+        const cartItemsDiv = document.getElementById('cart-items');
+        const totalP = document.getElementById('total'); // Referencia al <p> donde mostrar el total
+        cartItemsDiv.innerHTML = ''; // Limpiar el carrito antes de actualizarlo
+
+        let total = 0;
+
+        // Obtener el carrito desde localStorage
+        let carrito = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Iterar sobre los items del carrito y mostrar detalles
+        carrito.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+            itemDiv.innerHTML = `${item.nombre} - $${item.precio.toFixed(2)} - Opción: ${item.opcion}`;
+            cartItemsDiv.appendChild(itemDiv);
+
+            total += item.precio; // Sumar el precio del producto al total
+        });
+
+        totalP.innerHTML = `Total: $${total.toFixed(2)}`; // Mostrar el total en el <p> con id "total"
+    }
+
+    // Función para redirigir al usuario a la página de "envios.html"
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+        // Guardamos el carrito en el localStorage antes de redirigir
+        let carrito = JSON.parse(localStorage.getItem('cart')) || [];
+        localStorage.setItem('cart', JSON.stringify(carrito));
+        window.location.href = 'envios.html';
+    });
+
+    // Función para cambiar la imagen de la galería
+    function changeImage(gallery, direction) {
+        const images = gallery.querySelectorAll('.imagen');
+        let currentIndex = Array.from(images).findIndex(image => image.classList.contains('imagen-activa'));
+        images[currentIndex].classList.remove('imagen-activa');
+
+        let newIndex = (currentIndex + direction + images.length) % images.length;
+        images[newIndex].classList.add('imagen-activa');
+    }
+
+    // Llamada inicial para actualizar el carrito al cargar la página
+    document.addEventListener('DOMContentLoaded', actualizarCarrito);
+    </script>
+
+</body>
+
+<footer>
+    <p>&copy; 2024 Indumentaria a Crochet | <a href="/privacidad">Todos los derechos reservados</a> | <a href="/contacto">Localidad:Firmat/Santa Fe</a></p>
+</footer>
+
+</html>

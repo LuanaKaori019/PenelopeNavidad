@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penelope - Envíos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Penelope</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./hogar.html">Indumentaria</a></li>
+                <li><a href="./amig.html">Amigurumis</a></li>
+                <li><a href="#">Envíos</a></li>
+            </ul>
+        </nav>
+        <h1>Envíos</h1>
+        <!-- Enlace para volver al inicio (por defecto no visible en pantallas grandes) -->
+        <a href="index.html" id="volverInicio" class="volver-inicio">Volver al inicio</a>
+    </header>
+
+    <main>
+        <section id="metodo-pago">
+            <h2>Selecciona un Método de Pago</h2>
+            <ul id="lista-productos"></ul>
+            <form id="formulario-pago" onsubmit="enviarPedido(event)">
+                <label for="metodo-pago-select">Método de Pago:</label>
+                <select id="metodo-pago-select">
+                    <option value="tarjeta">Tarjeta de Crédito</option>
+                    <option value="paypal">Mercado pago</option>
+                    <option value="efectivo">Efectivo</option>
+                </select>
+                <h3>Opciones de Envío:</h3>
+                <div>
+                    
+                    <label>
+                        <input type="radio" name="opcion-envio" value="cadete" required>
+                        Cadete
+                    </label>
+                    <label>
+                        <input type="radio" name="opcion-envio" value="correo-argentino" required>
+                        Correo Argentino
+                    </label>
+                </div>
+
+                <label for="codigo-postal">Código Postal:</label>
+                <input type="text" id="codigo-postal" name="codigo-postal" placeholder="Ingresa tu código postal" required>
+                <button type="button" id="calcular-btn">Calcular</button>
+
+                <p id="costo-envio">Costo de Envío: $0.00</p>
+
+                <button type="submit">Realizar Pago</button>
+            </form>
+        </section>
+    </main>
+    <p class="envios">Gracias por su compra!</p>
+
+    <script>
+
+document.getElementById('calcular-btn').addEventListener('click', function() {
+    const codigoPostal = document.getElementById('codigo-postal').value;
+    const costoEnvioElement = document.getElementById('costo-envio');
+
+    if (!codigoPostal) {
+        alert('Por favor ingresa un código postal');
+        return;
+    }
+
+    // Convertir el código postal a número
+    const codigoPostalNumerico = parseInt(codigoPostal);
+
+    // Verifica si el código postal es válido
+    if (isNaN(codigoPostalNumerico)) {
+        alert('Código postal inválido');
+        return;
+    }
+
+    // Calcular el costo de envío
+    let costoEnvio = 0;
+
+    // Rango de códigos postales por regiones
+    if (codigoPostalNumerico >= 1000 && codigoPostalNumerico <= 2000) {
+        // Rosario
+        costoEnvio = 6699;
+    } else if (codigoPostalNumerico >= 2000 && codigoPostalNumerico <= 1000) {
+        // Buenos Aires
+        costoEnvio = 7416;
+    } else if (codigoPostalNumerico >= 3000 && codigoPostalNumerico <= 3000) {
+        // Santa Fe
+        costoEnvio = 7416;
+    } else if (codigoPostalNumerico >= 4000 && codigoPostalNumerico <= 5000) {
+        // Córdoba
+        costoEnvio = 7416;
+    } else if (codigoPostalNumerico >= 5000 && codigoPostalNumerico <= 5500) {
+        // Mendoza
+        costoEnvio = 8069;
+    } else if (codigoPostalNumerico >= 6000 && codigoPostalNumerico <= 4000) {
+        // Tucumán
+        costoEnvio = 8069;
+    } else {
+        // Otras provincias
+        costoEnvio = 1000;
+    }
+
+    // Mostrar el costo de envío
+    costoEnvioElement.textContent = `Costo de Envío: $${costoEnvio.toFixed(2)}`;
+});
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el carrito desde el localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || []; // Cambié "carrito" por "cart"
+    const listaProductos = document.getElementById('lista-productos');
+    let totalPrice = 0;
+
+    // Verificar si el carrito está vacío
+    if (cart.length === 0) {
+        listaProductos.innerHTML = "<li>No hay productos en el carrito.</li>";
+    } else {
+        // Mostrar los productos en la página de envíos
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.nombre} - Precio: $${item.precio.toFixed(2)}`;
+            listaProductos.appendChild(li);
+            totalPrice += item.precio;
+        });
+
+        // Mostrar el total en la lista de productos
+        const totalLi = document.createElement('li');
+        totalLi.textContent = `Total: $${totalPrice.toFixed(2)}`;
+        listaProductos.appendChild(totalLi);
+    }
+    
+    // Función para manejar el formulario y el envío del pedido
+    document.getElementById('formulario-pago').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe de manera tradicional
+
+        // Obtener el método de pago seleccionado
+        const metodoPago = document.getElementById('metodo-pago-select').value;
+
+        // Obtener la opción de envío seleccionada
+        const opcionEnvio = document.querySelector('input[name="opcion-envio"]:checked').value;
+
+        // Obtener el código postal ingresado
+        const codigoPostal = document.getElementById('codigo-postal').value;
+
+        // Obtener el costo de envío (si está disponible)
+        const costoEnvio = document.getElementById('costo-envio') ? document.getElementById('costo-envio').textContent.replace('Costo de Envío: $', '') : '0.00';
+
+        // Mensaje que se enviará a WhatsApp
+        let productosMensaje = '';
+        cart.forEach(item => {
+            productosMensaje += `${item.nombre} - Precio: $${item.precio.toFixed(2)}\n`;
+        });
+
+        const mensaje = `Nuevo pedido:\nMétodo de Pago: ${metodoPago}\nOpción de Envío: ${opcionEnvio}\nCódigo Postal: ${codigoPostal}\nCosto de Envío: $${costoEnvio}\n\nProductos:\n${productosMensaje}Total: $${totalPrice.toFixed(2)}`;
+
+        // Número de teléfono al que se enviará el mensaje
+        const numeroTelefono = '5493465520310'; // Reemplaza con el número de destino
+        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensaje)}`;
+
+        // Abrir la ventana de WhatsApp con el mensaje prellenado
+        window.open(urlWhatsApp, '_blank');
+    });
+});
+
+    </script>
+</body>
+</html>
